@@ -1,0 +1,274 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#100b0d">
+
+    <title>Una sorpresita para ti ❤️</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body>
+
+    <div class="ambient ambient-one"></div>
+    <div class="ambient ambient-two"></div>
+    <div class="background-hearts" aria-hidden="true">♥</div>
+
+    <header class="topbar">
+        <div class="brand">
+            <span class="brand-heart">♥</span>
+            <span>una sorpresita</span>
+        </div>
+        <span class="top-note">hecho con cariño</span>
+    </header>
+
+    <main class="app">
+
+        <div class="progress" id="progress">
+            <span class="progress-step active" data-progress="1"></span>
+            <span class="progress-step" data-progress="2"></span>
+            <span class="progress-step" data-progress="3"></span>
+            <span class="progress-step" data-progress="4"></span>
+        </div>
+
+        <!-- PASO 1: VALIDACIÓN DEL NOMBRE -->
+        <section class="screen active" id="step1">
+
+            <div class="access-card">
+
+                <div class="lock-icon" aria-hidden="true">
+                    <i class="icon-lock">♙</i>
+                </div>
+
+                <span class="eyebrow">una pequeña sorpresa</span>
+
+                <h1>Esto se desbloquea<br>con tu nombre <span>♥</span></h1>
+
+                <p class="lead">
+                    Parece que alguien tiene algo preparado para ti...
+                </p>
+
+                <form id="nameForm" class="form-card" novalidate>
+
+                    <label for="nameInput">¿Cómo te llamas?</label>
+
+                    <input
+                        type="text"
+                        id="nameInput"
+                        name="name"
+                        placeholder="Escribe tu nombre..."
+                        autocomplete="off"
+                        maxlength="40"
+                        required
+                    >
+
+                    <p class="error-message" id="nameError" role="alert" aria-live="polite"></p>
+
+                    <button type="submit" class="primary-button">
+                        <span>Entrar</span>
+                        <span aria-hidden="true">♥</span>
+                    </button>
+
+                </form>
+
+                <p class="tiny-note">Solo hay una persona que puede entrar aquí.</p>
+
+            </div>
+        </section>
+
+        <!-- PASO 2: RULETA -->
+        <section class="screen" id="step2">
+
+            <div class="content-card roulette-card">
+
+                <span class="eyebrow">nuestro pequeño plan</span>
+
+                <h1>¡Primera cita <span>♥</span><br>y haremos...</h1>
+
+                <p class="lead">
+                    Vamos a dejar que el destino decida.
+                </p>
+
+                <div class="slot-machine" id="slotMachine">
+
+                    <div class="slot-window" id="slotWindow" aria-label="Ruleta de planes">
+                        <div class="slot-items" id="slotItems">
+                            <div class="slot-item">🎨 Pintura</div>
+                            <div class="slot-item">🎬 Cine</div>
+                            <div class="slot-item">🎳 Mini golf</div>
+                            <div class="slot-item">🍕 Pizza</div>
+                        </div>
+                    </div>
+
+                    <div class="slot-selection" aria-hidden="true"></div>
+
+                </div>
+
+                <p class="roulette-hint" id="rouletteHint">
+                    Pulsa girar para descubrir nuestro plan.
+                </p>
+
+                <div class="button-row">
+                    <button type="button" class="secondary-button" id="spinAgain">
+                        ↻ Girar
+                    </button>
+
+                    <button type="button" class="primary-button" id="acceptPlan" disabled>
+                        Elegir ♥
+                    </button>
+                </div>
+
+                <p class="tiny-note">Siempre podemos volver a probar suerte.</p>
+
+            </div>
+        </section>
+
+        <!-- PASO 3: FECHA Y HORA -->
+        <section class="screen" id="step3">
+
+            <div class="content-card time-card">
+
+                <span class="eyebrow">ahora solo falta una cosa</span>
+
+                <h1>¿A qué hora<br>puedes estar lista? <span>♥</span></h1>
+
+                <div class="chosen-summary" id="chosenSummary">
+                    <span id="chosenEmoji">🎨</span>
+                    <span id="chosenName">Pintura</span>
+                </div>
+
+                <div class="form-card">
+
+                    <label for="dateInput">Elige el día</label>
+
+                    <input type="date" id="dateInput" required>
+
+                    <p class="error-message" id="dateError" role="alert"></p>
+
+                    <label class="time-label">¿Y a qué hora?</label>
+
+                    <div class="time-options" id="timeOptions">
+
+                        <label class="time-option">
+                            <input type="radio" name="time" value="17:00">
+                            <span>5 pm</span>
+                        </label>
+
+                        <label class="time-option">
+                            <input type="radio" name="time" value="18:00">
+                            <span>6 pm</span>
+                        </label>
+
+                        <label class="time-option">
+                            <input type="radio" name="time" value="19:00">
+                            <span>7 pm</span>
+                        </label>
+
+                        <label class="time-option">
+                            <input type="radio" name="time" value="20:00">
+                            <span>8 pm</span>
+                        </label>
+
+                        <label class="time-option">
+                            <input type="radio" name="time" value="21:00">
+                            <span>9 pm</span>
+                        </label>
+
+                    </div>
+
+                    <p class="error-message" id="timeError" role="alert"></p>
+
+                    <button type="button" class="primary-button full-button" id="confirmTime">
+                        Confirmar hora ♥
+                    </button>
+
+                </div>
+
+                <button type="button" class="text-button" id="backToWheel">
+                    ← Volver a la ruleta
+                </button>
+
+            </div>
+        </section>
+
+        <!-- PASO 4: SORPRESA FINAL -->
+        <section class="screen final-screen" id="step4">
+
+            <div class="confetti" aria-hidden="true">
+                <span>♥</span>
+                <span>✦</span>
+                <span>♥</span>
+                <span>✧</span>
+                <span>♥</span>
+                <span>✦</span>
+                <span>♥</span>
+            </div>
+
+            <div class="content-card final-card">
+
+                <span class="eyebrow">plan confirmado</span>
+
+                <h1>¡Tenemos una cita! <span>♥</span></h1>
+
+                <p class="lead">
+                    Y esta vez no hay excusas...
+                </p>
+
+                <div class="final-illustration" aria-hidden="true">
+                    <div class="illustration-heart">♥</div>
+                    <div class="teddy">🧸</div>
+                    <div class="illustration-text">tú + yo</div>
+                </div>
+
+                <div class="final-ticket">
+
+                    <div class="ticket-heading">NUESTRA PRÓXIMA CITA</div>
+
+                    <div class="ticket-plan">
+                        <span id="finalEmoji">🎨</span>
+                        <strong id="finalPlan">Pintura</strong>
+                    </div>
+
+                    <div class="ticket-divider"></div>
+
+                    <div class="ticket-details">
+                        <div>
+                            <span>FECHA</span>
+                            <strong id="finalDate">--</strong>
+                        </div>
+
+                        <div>
+                            <span>HORA</span>
+                            <strong id="finalTime">--</strong>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <button type="button" class="primary-button full-button" id="restart">
+                    Volver a empezar ♥
+                </button>
+
+                <p class="tiny-note">Esta sorpresa está hecha especialmente para ti.</p>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <span>hecho con ♥ para alguien especial</span>
+    </footer>
+
+    <script src="assets/js/app.js"></script>
+
+</body>
+</html>
